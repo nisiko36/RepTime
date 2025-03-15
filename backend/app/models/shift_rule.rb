@@ -1,0 +1,2 @@
+class ShiftRule < ApplicationRecord
+end

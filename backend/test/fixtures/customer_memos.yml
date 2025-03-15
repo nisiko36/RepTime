@@ -5,9 +5,11 @@ one:
   user: one
   content: MyText
   likes_count: 1
+  is_shared: false
 
 two:
   customer: two
   user: two
   content: MyText
   likes_count: 1
+  is_shared: false

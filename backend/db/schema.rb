@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_13_022026) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_15_030034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendance_memos", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.date "date"
+    t.string "memo_type"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,6 +29,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_022026) do
     t.bigint "user_id", null: false
     t.text "content"
     t.integer "likes_count"
+    t.boolean "is_shared"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_customer_memos_on_customer_id"
@@ -59,6 +62,21 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_022026) do
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
   end
 
+  create_table "shift_requests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "date"
+    t.string "shift_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shift_requests_on_user_id"
+  end
+
+  create_table "shift_rules", force: :cascade do |t|
+    t.json "rule_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shifts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "check_in"
@@ -71,7 +89,13 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_022026) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "email"
     t.string "role"
+    t.integer "rank_hall"
+    t.integer "rank_kitchen"
+    t.integer "wage_cents"
+    t.integer "total_earned_cents"
+    t.json "possible_tasks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,5 +105,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_022026) do
   add_foreign_key "customer_memos", "users"
   add_foreign_key "owner_messages", "users"
   add_foreign_key "reservations", "customers"
+  add_foreign_key "shift_requests", "users"
   add_foreign_key "shifts", "users"
 end

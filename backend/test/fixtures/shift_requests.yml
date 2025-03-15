@@ -3,11 +3,9 @@
 one:
   user: one
   date: 2025-03-15
-  memo_type: MyString
-  content: MyText
+  shift_type: MyString
 
 two:
   user: two
   date: 2025-03-15
-  memo_type: MyString
-  content: MyText
+  shift_type: MyString
