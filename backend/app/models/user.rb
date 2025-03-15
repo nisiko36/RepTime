@@ -1,4 +1,4 @@
-class User <
+class User < ApplicationRecord
   has_many :shifts, dependent: :destroy
   has_many :shift_requests, dependent: :destroy
   has_many :attendance_memos, dependent: :destroy
