@@ -1,15 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:update, :destroy]
 
+  # ユーザー一覧取得
   def index
     users = User.all
     render json: users
   end
 
-  def show
-    render json: @user
-  end
-
+  # 新規ユーザー作成
   def create
     user = User.new(user_params)
     if user.save
@@ -19,6 +17,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # ユーザー更新
   def update
     if @user.update(user_params)
       render json: @user
@@ -27,6 +26,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # ユーザー削除
   def destroy
     @user.destroy
     head :no_content
