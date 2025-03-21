@@ -6,6 +6,9 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# 環境変数を自動で読み込む
+Dotenv::Railtie.load if Rails.env.development? || Rails.env.test?
+
 module Backend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
