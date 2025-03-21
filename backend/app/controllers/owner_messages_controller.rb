@@ -41,7 +41,7 @@ class OwnerMessagesController < ApplicationController
 
   def authorize_owner
     user = User.find(params[:owner_message][:user_id])
-    unless user.role == "owner"
+    unless user.role == "staff"
       render json: { error: "You are not authorized to perform this action." }, status: :forbidden
     end
   end
