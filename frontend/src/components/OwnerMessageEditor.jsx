@@ -40,7 +40,7 @@ const OwnerMessageEditor = () => {
             ))}
         </ul>
 
-        {user?.role === "staff" && (
+        {user?.role === "owner" && (
             <>
             <h2 className="text-lg font-bold mt-6">新規メッセージ</h2>
             <div className="mt-2 flex">
