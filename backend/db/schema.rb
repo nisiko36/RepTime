@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_22_052734) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_22_071949) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_22_052734) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "square_customer_id"
+    t.string "line_user_id"
+    t.string "line_display_name"
   end
 
   create_table "owner_messages", force: :cascade do |t|
@@ -60,6 +62,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_22_052734) do
     t.integer "seat_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "seat_numbers", default: [], array: true
+    t.boolean "is_walk_in", default: false
+    t.string "square_booking_id"
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
   end
 
