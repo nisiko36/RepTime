@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_22_071949) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_22_102229) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_22_071949) do
     t.string "square_customer_id"
     t.string "line_user_id"
     t.string "line_display_name"
+    t.datetime "last_visit_at"
   end
 
   create_table "owner_messages", force: :cascade do |t|

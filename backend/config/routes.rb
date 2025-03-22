@@ -10,9 +10,15 @@ Rails.application.routes.draw do
   get "/freee/employees", to: "freee#employees"
   post "/freee/time_clock", to: "freee#time_clock"
 
+    # LINE
+    post "line_checkin", to: "line_checkins#create"
+
+
   # Square API ルート
   scope :square do
     get "/bookings", to: "square#bookings"
     get "/bookings_with_memo", to: "square#bookings_with_memo"
+
+
   end
 end
