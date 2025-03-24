@@ -37,6 +37,21 @@ class ReservationsController < ApplicationController
     head :no_content
   end
 
+# GET /reservations/by_date?date=2025-03-25
+def by_date
+  date = params[:date]&.to_date || Date.today
+
+  start_range = date.beginning_of_day
+  end_range   = date.end_of_day
+
+  reservations = Reservation.includes(:customer)
+                            .where(start_at: start_range..end_range)
+                            .order(:start_at)
+
+  render json: reservations.as_json(include: :customer)
+end
+
+
   private
 
   def set_reservation
@@ -44,6 +59,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:customer_id, :start_at, :end_at, :seat_number)
+    params.require(:reservation).permit(:customer_id, :start_at, :end_at, seat_numbers: [])
   end
 end

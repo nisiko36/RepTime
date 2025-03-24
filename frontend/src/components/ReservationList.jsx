@@ -15,7 +15,7 @@ const ReservationList = ({
             {reservations.map((res) => (
                 <li key={res.id} className="p-2 border-b flex justify-between">
                     <div>
-                        {res.customer.name} - {new Date(res.start_at).toLocaleString()} - {new Date(res.end_at).toLocaleString()}
+                        {res.customer.name} - {new Date(res.start_at).toLocaleString()} - {new Date(res.end_at).toLocaleString()} [{res.seat_numbers}] {res.party_size}人
                     </div>
                     {editable && (
                         <div>

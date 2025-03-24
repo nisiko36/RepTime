@@ -1,33 +1,42 @@
+import React, { useState } from "react";
 import useReservations from "../hooks/useReservations";
 import ReservationList from "../components/ReservationList";
 import ReservationForm from "../components/ReservationForm";
-import BookingWithMemoList from "../components/BookingWithMemoList";
 
 function ReservationsPage() {
+    const [selectedDate, setSelectedDate] = useState("");
+
+    // ここで、日付をフックに渡す
     const {
         reservations,
         loading,
         createReservation,
         updateReservation,
         deleteReservation
-    } = useReservations();
+    } = useReservations(selectedDate);
 
     return (
         <div className="p-4">
-            <h1 className="text-xl font-bold">予約一覧</h1>
-            <ReservationList
-                reservations={reservations}
-                loading={loading}
-                updateReservation={updateReservation}
-                deleteReservation={deleteReservation}
+        <h1 className="text-xl font-bold">予約一覧</h1>
+
+        <div className="mt-2">
+            <label>日付: </label>
+            <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            className="border p-1"
             />
+        </div>
 
-            <ReservationForm onCreate={createReservation} />
+        <ReservationList
+            reservations={reservations}
+            loading={loading}
+            updateReservation={updateReservation}
+            deleteReservation={deleteReservation}
+        />
 
-            <div className="p-8">
-                <h1 className="text-2xl font-bold mb-4">予約メモ</h1>
-                <BookingWithMemoList />
-            </div>
+        <ReservationForm onCreate={createReservation} />
         </div>
     );
 }
