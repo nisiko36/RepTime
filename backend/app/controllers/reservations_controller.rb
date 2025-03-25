@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
   # 予約一覧取得
   def index
     reservations = Reservation.includes(:customer).all
-    render json: reservations.as_json(include: :customer)
+    render json: reservations
   end
 
   # 予約詳細取得
@@ -48,7 +48,7 @@ def by_date
                             .where(start_at: start_range..end_range)
                             .order(:start_at)
 
-  render json: reservations.as_json(include: :customer)
+  render json: reservations
 end
 
 

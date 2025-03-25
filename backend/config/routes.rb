@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :shifts, only: [:index, :show, :create, :update, :destroy]
-  resources :customers, only: [:show]
+  resources :customers, only: [:index, :show, :update]
   resources :customer_memos, only: [:index, :create, :update, :destroy]
   resources :owner_messages, only: [:index, :create, :update, :destroy]
 

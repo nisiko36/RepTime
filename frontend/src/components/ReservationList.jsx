@@ -1,41 +1,40 @@
-// src/components/ReservationList.jsx
 import React from "react";
 
-const ReservationList = ({
-    reservations,
-    loading,
-    updateReservation,
-    deleteReservation,
-    editable = true
-}) => {
-    if (loading) return <p>読み込み中...</p>;
+const ReservationList = ({ reservations, loading, deleteReservation, onEdit }) => {
+    if (loading) return <p>Loading...</p>;
+
+    // 昇順に並び替え（start_atの早い順）
+    const sortedReservations = reservations
+        .slice() // 元配列を破壊しないため
+        .sort((a, b) => new Date(a.start_at) - new Date(b.start_at));
 
     return (
-        <ul className="mt-4">
-            {reservations.map((res) => (
-                <li key={res.id} className="p-2 border-b flex justify-between">
+        <div>
+            {sortedReservations.map((reservation) => (
+                <div key={reservation.id} className="border p-2 flex justify-between items-center">
                     <div>
-                        {res.customer.name} - {new Date(res.start_at).toLocaleString()} - {new Date(res.end_at).toLocaleString()} [{res.seat_numbers}] {res.party_size}人
+                        <p>顧客ID: {reservation.customer_id}</p>
+                        <p>開始: {new Date(reservation.start_at).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}</p>
+                        <p>終了: {new Date(reservation.end_at).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}</p>
+                        <p>席番号: {reservation.seat_numbers.join(", ")}</p>
                     </div>
-                    {editable && (
-                        <div>
-                            <button
-                                className="bg-green-500 text-white px-2 py-1 mx-2"
-                                onClick={() => updateReservation(res.id, { start_at: "2025-03-12T18:00:00Z" })}
-                            >
-                                更新
-                            </button>
-                            <button
-                                className="bg-red-500 text-white px-2 py-1"
-                                onClick={() => deleteReservation(res.id)}
-                            >
-                                削除
-                            </button>
-                        </div>
-                    )}
-                </li>
+                    <div>
+                        <button
+                            className="bg-green-500 text-white px-2 py-1 mx-2"
+                            onClick={() => onEdit(reservation)}
+                        >
+                            編集
+                        </button>
+                        <button
+                            className="bg-red-500 text-white px-2 py-1"
+                            onClick={() => deleteReservation(reservation.id)}
+                        >
+                            削除
+                        </button>
+                    </div>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 };
 

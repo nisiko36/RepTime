@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useCustomerMemos from "../hooks/useCustomerMemos";
-import useCustomer from "../hooks/useCustomer";
+import useCustomer from "../hooks/useCustomers";
 
 
 
