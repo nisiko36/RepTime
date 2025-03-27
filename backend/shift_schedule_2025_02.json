@@ -1,0 +1,1850 @@
+{
+  "2025-02-01": [
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "first_half",
+      "check_in": "2025-02-01 17:00",
+      "check_out": "2025-02-01 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "full",
+      "check_in": "2025-02-01 17:00",
+      "check_out": "2025-02-01 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-01 20:00",
+          "end": "2025-02-01 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "full",
+      "check_in": "2025-02-01 17:00",
+      "check_out": "2025-02-01 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-01 20:00",
+          "end": "2025-02-01 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "second_half",
+      "check_in": "2025-02-01 20:00",
+      "check_out": "2025-02-01 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "first_half",
+      "check_in": "2025-02-01 17:00",
+      "check_out": "2025-02-01 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "full",
+      "check_in": "2025-02-01 17:00",
+      "check_out": "2025-02-01 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-01 20:00",
+          "end": "2025-02-01 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-01 17:00",
+      "check_out": "2025-02-01 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-01 21:00",
+          "end": "2025-02-01 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-02": [
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "full",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-02 20:00",
+          "end": "2025-02-02 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "full",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-02 20:00",
+          "end": "2025-02-02 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "full",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-02 20:00",
+          "end": "2025-02-02 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "full",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-02 20:00",
+          "end": "2025-02-02 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "full",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-02 20:00",
+          "end": "2025-02-02 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "first_half",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-02 17:00",
+      "check_out": "2025-02-02 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-02 21:00",
+          "end": "2025-02-02 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-04": [
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "first_half",
+      "check_in": "2025-02-04 17:00",
+      "check_out": "2025-02-04 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "second_half",
+      "check_in": "2025-02-04 20:00",
+      "check_out": "2025-02-04 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "full",
+      "check_in": "2025-02-04 17:00",
+      "check_out": "2025-02-04 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-04 20:00",
+          "end": "2025-02-04 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 27,
+      "name": "従業員 雅紀",
+      "freee_employee_id": 3066304,
+      "shift_type": "first_half",
+      "check_in": "2025-02-04 17:00",
+      "check_out": "2025-02-04 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-04 17:00",
+      "check_out": "2025-02-04 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-04 21:00",
+          "end": "2025-02-04 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-05": [
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "first_half",
+      "check_in": "2025-02-05 17:00",
+      "check_out": "2025-02-05 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "second_half",
+      "check_in": "2025-02-05 20:00",
+      "check_out": "2025-02-05 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "second_half",
+      "check_in": "2025-02-05 20:00",
+      "check_out": "2025-02-05 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 27,
+      "name": "従業員 雅紀",
+      "freee_employee_id": 3066304,
+      "shift_type": "second_half",
+      "check_in": "2025-02-05 20:00",
+      "check_out": "2025-02-05 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-05 17:00",
+      "check_out": "2025-02-05 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-05 21:00",
+          "end": "2025-02-05 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-06": [
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "full",
+      "check_in": "2025-02-06 17:00",
+      "check_out": "2025-02-06 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-06 20:00",
+          "end": "2025-02-06 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "first_half",
+      "check_in": "2025-02-06 17:00",
+      "check_out": "2025-02-06 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "second_half",
+      "check_in": "2025-02-06 20:00",
+      "check_out": "2025-02-06 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "full",
+      "check_in": "2025-02-06 17:00",
+      "check_out": "2025-02-06 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-06 20:00",
+          "end": "2025-02-06 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-06 17:00",
+      "check_out": "2025-02-06 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-06 21:00",
+          "end": "2025-02-06 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-07": [
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "second_half",
+      "check_in": "2025-02-07 20:00",
+      "check_out": "2025-02-07 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "first_half",
+      "check_in": "2025-02-07 17:00",
+      "check_out": "2025-02-07 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "first_half",
+      "check_in": "2025-02-07 17:00",
+      "check_out": "2025-02-07 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 27,
+      "name": "従業員 雅紀",
+      "freee_employee_id": 3066304,
+      "shift_type": "second_half",
+      "check_in": "2025-02-07 20:00",
+      "check_out": "2025-02-07 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "second_half",
+      "check_in": "2025-02-07 20:00",
+      "check_out": "2025-02-07 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "full",
+      "check_in": "2025-02-07 17:00",
+      "check_out": "2025-02-07 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-07 20:00",
+          "end": "2025-02-07 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-07 17:00",
+      "check_out": "2025-02-07 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-07 21:00",
+          "end": "2025-02-07 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-08": [
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "second_half",
+      "check_in": "2025-02-08 20:00",
+      "check_out": "2025-02-08 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 25,
+      "name": "従業員 花子",
+      "freee_employee_id": 2998684,
+      "shift_type": "full",
+      "check_in": "2025-02-08 17:00",
+      "check_out": "2025-02-08 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-08 20:00",
+          "end": "2025-02-08 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "first_half",
+      "check_in": "2025-02-08 17:00",
+      "check_out": "2025-02-08 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "second_half",
+      "check_in": "2025-02-08 20:00",
+      "check_out": "2025-02-08 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "second_half",
+      "check_in": "2025-02-08 20:00",
+      "check_out": "2025-02-08 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "first_half",
+      "check_in": "2025-02-08 17:00",
+      "check_out": "2025-02-08 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-08 17:00",
+      "check_out": "2025-02-08 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-08 21:00",
+          "end": "2025-02-08 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-09": [
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "first_half",
+      "check_in": "2025-02-09 17:00",
+      "check_out": "2025-02-09 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "full",
+      "check_in": "2025-02-09 17:00",
+      "check_out": "2025-02-09 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-09 20:00",
+          "end": "2025-02-09 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "first_half",
+      "check_in": "2025-02-09 17:00",
+      "check_out": "2025-02-09 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "second_half",
+      "check_in": "2025-02-09 20:00",
+      "check_out": "2025-02-09 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "first_half",
+      "check_in": "2025-02-09 17:00",
+      "check_out": "2025-02-09 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "full",
+      "check_in": "2025-02-09 17:00",
+      "check_out": "2025-02-09 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-09 20:00",
+          "end": "2025-02-09 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-09 17:00",
+      "check_out": "2025-02-09 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-09 21:00",
+          "end": "2025-02-09 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-11": [
+    {
+      "user_id": 25,
+      "name": "従業員 花子",
+      "freee_employee_id": 2998684,
+      "shift_type": "full",
+      "check_in": "2025-02-11 17:00",
+      "check_out": "2025-02-11 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-11 20:00",
+          "end": "2025-02-11 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "first_half",
+      "check_in": "2025-02-11 17:00",
+      "check_out": "2025-02-11 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "second_half",
+      "check_in": "2025-02-11 20:00",
+      "check_out": "2025-02-11 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "full",
+      "check_in": "2025-02-11 17:00",
+      "check_out": "2025-02-11 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-11 20:00",
+          "end": "2025-02-11 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-11 17:00",
+      "check_out": "2025-02-11 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-11 21:00",
+          "end": "2025-02-11 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-12": [
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "first_half",
+      "check_in": "2025-02-12 17:00",
+      "check_out": "2025-02-12 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "second_half",
+      "check_in": "2025-02-12 20:00",
+      "check_out": "2025-02-12 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "full",
+      "check_in": "2025-02-12 17:00",
+      "check_out": "2025-02-12 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-12 20:00",
+          "end": "2025-02-12 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "full",
+      "check_in": "2025-02-12 17:00",
+      "check_out": "2025-02-12 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-12 20:00",
+          "end": "2025-02-12 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-12 17:00",
+      "check_out": "2025-02-12 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-12 21:00",
+          "end": "2025-02-12 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-13": [
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "first_half",
+      "check_in": "2025-02-13 17:00",
+      "check_out": "2025-02-13 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "first_half",
+      "check_in": "2025-02-13 17:00",
+      "check_out": "2025-02-13 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "full",
+      "check_in": "2025-02-13 17:00",
+      "check_out": "2025-02-13 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-13 20:00",
+          "end": "2025-02-13 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "full",
+      "check_in": "2025-02-13 17:00",
+      "check_out": "2025-02-13 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-13 20:00",
+          "end": "2025-02-13 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-13 17:00",
+      "check_out": "2025-02-13 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-13 21:00",
+          "end": "2025-02-13 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-14": [
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "first_half",
+      "check_in": "2025-02-14 17:00",
+      "check_out": "2025-02-14 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "full",
+      "check_in": "2025-02-14 17:00",
+      "check_out": "2025-02-14 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-14 20:00",
+          "end": "2025-02-14 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "first_half",
+      "check_in": "2025-02-14 17:00",
+      "check_out": "2025-02-14 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "first_half",
+      "check_in": "2025-02-14 17:00",
+      "check_out": "2025-02-14 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "second_half",
+      "check_in": "2025-02-14 20:00",
+      "check_out": "2025-02-14 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "first_half",
+      "check_in": "2025-02-14 17:00",
+      "check_out": "2025-02-14 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-14 17:00",
+      "check_out": "2025-02-14 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-14 21:00",
+          "end": "2025-02-14 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-15": [
+    {
+      "user_id": 25,
+      "name": "従業員 花子",
+      "freee_employee_id": 2998684,
+      "shift_type": "first_half",
+      "check_in": "2025-02-15 17:00",
+      "check_out": "2025-02-15 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "second_half",
+      "check_in": "2025-02-15 20:00",
+      "check_out": "2025-02-15 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "full",
+      "check_in": "2025-02-15 17:00",
+      "check_out": "2025-02-15 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-15 20:00",
+          "end": "2025-02-15 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "full",
+      "check_in": "2025-02-15 17:00",
+      "check_out": "2025-02-15 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-15 20:00",
+          "end": "2025-02-15 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "full",
+      "check_in": "2025-02-15 17:00",
+      "check_out": "2025-02-15 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-15 20:00",
+          "end": "2025-02-15 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "second_half",
+      "check_in": "2025-02-15 20:00",
+      "check_out": "2025-02-15 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-15 17:00",
+      "check_out": "2025-02-15 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-15 21:00",
+          "end": "2025-02-15 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-16": [
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "full",
+      "check_in": "2025-02-16 17:00",
+      "check_out": "2025-02-16 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-16 20:00",
+          "end": "2025-02-16 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "full",
+      "check_in": "2025-02-16 17:00",
+      "check_out": "2025-02-16 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-16 20:00",
+          "end": "2025-02-16 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "first_half",
+      "check_in": "2025-02-16 17:00",
+      "check_out": "2025-02-16 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "second_half",
+      "check_in": "2025-02-16 20:00",
+      "check_out": "2025-02-16 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "second_half",
+      "check_in": "2025-02-16 20:00",
+      "check_out": "2025-02-16 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "full",
+      "check_in": "2025-02-16 17:00",
+      "check_out": "2025-02-16 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-16 20:00",
+          "end": "2025-02-16 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-16 17:00",
+      "check_out": "2025-02-16 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-16 21:00",
+          "end": "2025-02-16 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-18": [
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "full",
+      "check_in": "2025-02-18 17:00",
+      "check_out": "2025-02-18 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-18 20:00",
+          "end": "2025-02-18 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 27,
+      "name": "従業員 雅紀",
+      "freee_employee_id": 3066304,
+      "shift_type": "second_half",
+      "check_in": "2025-02-18 20:00",
+      "check_out": "2025-02-18 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "full",
+      "check_in": "2025-02-18 17:00",
+      "check_out": "2025-02-18 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-18 20:00",
+          "end": "2025-02-18 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "first_half",
+      "check_in": "2025-02-18 17:00",
+      "check_out": "2025-02-18 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-18 17:00",
+      "check_out": "2025-02-18 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-18 21:00",
+          "end": "2025-02-18 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-19": [
+    {
+      "user_id": 25,
+      "name": "従業員 花子",
+      "freee_employee_id": 2998684,
+      "shift_type": "first_half",
+      "check_in": "2025-02-19 17:00",
+      "check_out": "2025-02-19 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "full",
+      "check_in": "2025-02-19 17:00",
+      "check_out": "2025-02-19 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-19 20:00",
+          "end": "2025-02-19 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "second_half",
+      "check_in": "2025-02-19 20:00",
+      "check_out": "2025-02-19 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "first_half",
+      "check_in": "2025-02-19 17:00",
+      "check_out": "2025-02-19 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-19 17:00",
+      "check_out": "2025-02-19 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-19 21:00",
+          "end": "2025-02-19 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-20": [
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "full",
+      "check_in": "2025-02-20 17:00",
+      "check_out": "2025-02-20 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-20 20:00",
+          "end": "2025-02-20 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "first_half",
+      "check_in": "2025-02-20 17:00",
+      "check_out": "2025-02-20 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "full",
+      "check_in": "2025-02-20 17:00",
+      "check_out": "2025-02-20 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-20 20:00",
+          "end": "2025-02-20 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "first_half",
+      "check_in": "2025-02-20 17:00",
+      "check_out": "2025-02-20 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-20 17:00",
+      "check_out": "2025-02-20 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-20 21:00",
+          "end": "2025-02-20 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-21": [
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "full",
+      "check_in": "2025-02-21 17:00",
+      "check_out": "2025-02-21 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-21 20:00",
+          "end": "2025-02-21 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 25,
+      "name": "従業員 花子",
+      "freee_employee_id": 2998684,
+      "shift_type": "full",
+      "check_in": "2025-02-21 17:00",
+      "check_out": "2025-02-21 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-21 20:00",
+          "end": "2025-02-21 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 32,
+      "name": "従業員 潤",
+      "freee_employee_id": 3066306,
+      "shift_type": "full",
+      "check_in": "2025-02-21 17:00",
+      "check_out": "2025-02-21 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-21 20:00",
+          "end": "2025-02-21 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "first_half",
+      "check_in": "2025-02-21 17:00",
+      "check_out": "2025-02-21 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "second_half",
+      "check_in": "2025-02-21 20:00",
+      "check_out": "2025-02-21 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "full",
+      "check_in": "2025-02-21 17:00",
+      "check_out": "2025-02-21 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-21 20:00",
+          "end": "2025-02-21 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-21 17:00",
+      "check_out": "2025-02-21 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-21 21:00",
+          "end": "2025-02-21 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-22": [
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "second_half",
+      "check_in": "2025-02-22 20:00",
+      "check_out": "2025-02-22 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "second_half",
+      "check_in": "2025-02-22 20:00",
+      "check_out": "2025-02-22 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "first_half",
+      "check_in": "2025-02-22 17:00",
+      "check_out": "2025-02-22 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "full",
+      "check_in": "2025-02-22 17:00",
+      "check_out": "2025-02-22 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-22 20:00",
+          "end": "2025-02-22 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 33,
+      "name": "従業員 愛瑠",
+      "freee_employee_id": 3066322,
+      "shift_type": "second_half",
+      "check_in": "2025-02-22 20:00",
+      "check_out": "2025-02-22 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "first_half",
+      "check_in": "2025-02-22 17:00",
+      "check_out": "2025-02-22 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-22 17:00",
+      "check_out": "2025-02-22 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-22 21:00",
+          "end": "2025-02-22 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-23": [
+    {
+      "user_id": 28,
+      "name": "従業員 智",
+      "freee_employee_id": 3066303,
+      "shift_type": "first_half",
+      "check_in": "2025-02-23 17:00",
+      "check_out": "2025-02-23 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "first_half",
+      "check_in": "2025-02-23 17:00",
+      "check_out": "2025-02-23 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "second_half",
+      "check_in": "2025-02-23 20:00",
+      "check_out": "2025-02-23 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "second_half",
+      "check_in": "2025-02-23 20:00",
+      "check_out": "2025-02-23 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "full",
+      "check_in": "2025-02-23 17:00",
+      "check_out": "2025-02-23 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-23 20:00",
+          "end": "2025-02-23 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "full",
+      "check_in": "2025-02-23 17:00",
+      "check_out": "2025-02-23 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-23 20:00",
+          "end": "2025-02-23 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-23 17:00",
+      "check_out": "2025-02-23 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-23 21:00",
+          "end": "2025-02-23 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-25": [
+    {
+      "user_id": 37,
+      "name": "従業員 三郎",
+      "freee_employee_id": 2998711,
+      "shift_type": "first_half",
+      "check_in": "2025-02-25 17:00",
+      "check_out": "2025-02-25 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "full",
+      "check_in": "2025-02-25 17:00",
+      "check_out": "2025-02-25 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-25 20:00",
+          "end": "2025-02-25 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "first_half",
+      "check_in": "2025-02-25 17:00",
+      "check_out": "2025-02-25 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "full",
+      "check_in": "2025-02-25 17:00",
+      "check_out": "2025-02-25 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-25 20:00",
+          "end": "2025-02-25 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-25 17:00",
+      "check_out": "2025-02-25 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-25 21:00",
+          "end": "2025-02-25 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-26": [
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "full",
+      "check_in": "2025-02-26 17:00",
+      "check_out": "2025-02-26 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-26 20:00",
+          "end": "2025-02-26 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 30,
+      "name": "従業員 翔",
+      "freee_employee_id": 3066299,
+      "shift_type": "full",
+      "check_in": "2025-02-26 17:00",
+      "check_out": "2025-02-26 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-26 20:00",
+          "end": "2025-02-26 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "first_half",
+      "check_in": "2025-02-26 17:00",
+      "check_out": "2025-02-26 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "second_half",
+      "check_in": "2025-02-26 20:00",
+      "check_out": "2025-02-26 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-26 17:00",
+      "check_out": "2025-02-26 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-26 21:00",
+          "end": "2025-02-26 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-27": [
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "full",
+      "check_in": "2025-02-27 17:00",
+      "check_out": "2025-02-27 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-27 20:00",
+          "end": "2025-02-27 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 36,
+      "name": "従業員 美波",
+      "freee_employee_id": 3066318,
+      "shift_type": "second_half",
+      "check_in": "2025-02-27 20:00",
+      "check_out": "2025-02-27 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 35,
+      "name": "従業員 美桜",
+      "freee_employee_id": 3066315,
+      "shift_type": "full",
+      "check_in": "2025-02-27 17:00",
+      "check_out": "2025-02-27 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-27 20:00",
+          "end": "2025-02-27 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "first_half",
+      "check_in": "2025-02-27 17:00",
+      "check_out": "2025-02-27 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-27 17:00",
+      "check_out": "2025-02-27 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-27 21:00",
+          "end": "2025-02-27 22:00"
+        }
+      ]
+    }
+  ],
+  "2025-02-28": [
+    {
+      "user_id": 31,
+      "name": "従業員 和也",
+      "freee_employee_id": 3066300,
+      "shift_type": "full",
+      "check_in": "2025-02-28 17:00",
+      "check_out": "2025-02-28 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-28 20:00",
+          "end": "2025-02-28 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 26,
+      "name": "従業員 次郎",
+      "freee_employee_id": 2998697,
+      "shift_type": "second_half",
+      "check_in": "2025-02-28 20:00",
+      "check_out": "2025-02-28 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 34,
+      "name": "従業員 芽郁",
+      "freee_employee_id": 3066314,
+      "shift_type": "second_half",
+      "check_in": "2025-02-28 20:00",
+      "check_out": "2025-02-28 23:45",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 24,
+      "name": "従業員 太郎",
+      "freee_employee_id": 2998659,
+      "shift_type": "full",
+      "check_in": "2025-02-28 17:00",
+      "check_out": "2025-02-28 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-28 20:00",
+          "end": "2025-02-28 21:00"
+        }
+      ]
+    },
+    {
+      "user_id": 27,
+      "name": "従業員 雅紀",
+      "freee_employee_id": 3066304,
+      "shift_type": "first_half",
+      "check_in": "2025-02-28 17:00",
+      "check_out": "2025-02-28 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 29,
+      "name": "従業員 架純",
+      "freee_employee_id": 3066316,
+      "shift_type": "first_half",
+      "check_in": "2025-02-28 17:00",
+      "check_out": "2025-02-28 21:00",
+      "breaks": [
+
+      ]
+    },
+    {
+      "user_id": 23,
+      "name": "西村 太郎",
+      "freee_employee_id": 2992693,
+      "shift_type": "full",
+      "check_in": "2025-02-28 17:00",
+      "check_out": "2025-02-28 23:45",
+      "breaks": [
+        {
+          "begin": "2025-02-28 21:00",
+          "end": "2025-02-28 22:00"
+        }
+      ]
+    }
+  ]
+}

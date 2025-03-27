@@ -32,13 +32,14 @@ class FreeeApiService
   end
 
   # 🔹 勤怠打刻を登録
-  def post_time_clock(employee_id, clock_type, datetime)
+  def post_time_clock(employee_id, clock_type, datetime, note ="")
     formatted_datetime = Time.parse(datetime).strftime("%Y-%m-%d %H:%M")
     # formatted_datetime = Time.parse(datetime).iso8601
     body = {
       company_id: @company_id,
       type: clock_type.to_s.strip,  # "clock_in", "clock_out", "break_begin", "break_end"
-      datetime: formatted_datetime
+      datetime: formatted_datetime,
+      note: note.to_s
     }
     puts "送信データ: #{body.inspect}"  # ← デバッグ用に追加
     puts "送信URL: /hr/api/v1/employees/#{employee_id}/time_clocks"

@@ -59,6 +59,6 @@ end
   end
 
   def reservation_params
-    params.require(:reservation).permit(:customer_id, :start_at, :end_at, seat_numbers: [])
+    params.require(:shift).permit(:user_id, :check_in, :check_out, :break_begin, :break_end)
   end
 end

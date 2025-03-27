@@ -4,7 +4,7 @@ const START_HOUR = 18;
 const END_HOUR = 23;
 const TOTAL_HOURS = END_HOUR - START_HOUR; // 5時間
 
-function SeatTimeline({ seatName, reservations, date }) {
+function SeatTimeline({ seatName, reservations }) {
     return (
         <div className="relative mb-1" style={{ height: "30px" }}>
             {/* 左側に席番号を表示 */}
@@ -44,8 +44,12 @@ function SeatTimeline({ seatName, reservations, date }) {
                     const endPercent = calcTimePercent(res.end_at);
                     const widthPercent = endPercent - startPercent;
                     // 帯の色: 1回目なら緑 (#48bb78)、2回目以上なら青 (#4299e1)
-                    const color =
-                        res.customer && res.customer.visit_count > 1 ? "#4299e1" : "#48bb78";
+                    // const color =
+                    //     res.customer && res.customer.visit_count > 1 ? "#4299e1" : "#48bb78";
+                    {console.log("is_repeat")}
+                    {console.log(res.is_repeat)}
+                    const color = res.is_repeat ? "#4299e1" : "#48bb78";
+
                     return (
                         <div
                             key={idx}

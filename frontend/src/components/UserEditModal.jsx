@@ -23,7 +23,7 @@ const UserEditModal = ({ user, onSave, onClose }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div className="bg-white p-6 rounded shadow-lg w-96 relative">
+        <div className="bg-gray-600 p-6 rounded shadow-lg w-96 relative">
             <button
             onClick={onClose}
             className="absolute right-2 top-2 text-gray-500 hover:text-gray-800"
@@ -53,30 +53,30 @@ const UserEditModal = ({ user, onSave, onClose }) => {
             {/* ランク */}
             <div className="flex gap-4">
                 <div className="flex-1">
-                <label className="block text-sm font-medium">ホールランク</label>
-                <select
-                    name="rank_hall"
-                    value={editUser.rank_hall || 1}
-                    onChange={handleChange}
-                    className="border p-2 w-full"
-                >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                </div>
-
-                <div className="flex-1">
-                <label className="block text-sm font-medium">キッチンランク</label>
+                <label className="text-sm font-medium">キッチンランク</label>
                 <select
                     name="rank_kitchen"
                     value={editUser.rank_kitchen || 1}
                     onChange={handleChange}
                     className="border p-2 w-full"
                 >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option value="1">⭐️</option>
+                    <option value="2">⭐️⭐️</option>
+                    <option value="3">⭐️⭐️⭐️</option>
+                </select>
+                </div>
+
+                <div className="flex-1">
+                <label className="text-sm font-medium">ホールランク</label>
+                <select
+                    name="rank_hall"
+                    value={editUser.rank_hall || 1}
+                    onChange={handleChange}
+                    className="border p-2 w-full"
+                >
+                    <option value="1">⭐️</option>
+                    <option value="2">⭐️⭐️</option>
+                    <option value="3">⭐️⭐️⭐️</option>
                 </select>
                 </div>
             </div>

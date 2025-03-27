@@ -1,33 +1,59 @@
-import { useState, useEffect } from "react";
-import { fetchEmployees, postTimeClock } from "../api/freeeApi";
+import { useState } from "react";
+import { postTimeClock, saveAttendanceMemo } from "../api/freeeApi";
+import ClockDisplay from "./ClockDisplay";
+import useAuth from "../hooks/useAuth";
+
 
 function TimeClockForm() {
-    const [employees, setEmployees] = useState([]);
-    const [selectedEmployee, setSelectedEmployee] = useState("");
-    const [clockType, setClockType] = useState("clock_in");
-    const [datetime, setDatetime] = useState("");
+    const { user } = useAuth();
+    const [status, setStatus] = useState("");
+    const [note, setNote] = useState("");
 
-    useEffect(() => {
-        // 従業員一覧を取得
-        const getEmployees = async () => {
-            const data = await fetchEmployees();
-            if (data) setEmployees(data);
-        };
-        getEmployees();
-    }, []);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!selectedEmployee || !datetime) {
-            alert("従業員と日時を選択してください。");
+    const handleClockAction = async (clockType) => {
+        if (!user) {
+            alert("ログインユーザーが確認できません。");
             return;
         }
 
-        const response = await postTimeClock(selectedEmployee, clockType, datetime);
+        const datetime = new Date().toLocaleString("sv-SE", { timeZone: "Asia/Tokyo" }).replace(" ", "T");
+        const response = await postTimeClock(user.freee_employee_id, clockType, datetime, note);
+        console.log(user.freee_employee_id)
+
         if (response?.error) {
             alert(`エラー: ${response.error}`);
         } else {
             alert("勤怠打刻が完了しました！");
+
+            // freee人事労務とは関係のない顧客メモを保存
+            if (note.trim() !== "") {
+                await saveAttendanceMemo({
+                    user_id: user.id,
+                    date: datetime,
+                    memo_type: clockType,
+                    content: note
+                });
+            }
+            // 押すとリセット
+            setNote("");
+
+            // ステータス変更
+            switch (clockType) {
+                case "clock_in":
+                    setStatus("出勤中");
+                    break;
+                case "break_begin":
+                    setStatus("休憩中");
+                    break;
+                case "break_end":
+                    setStatus("勤務再開");
+                    break;
+                case "clock_out":
+                    setStatus("退勤済");
+                    break;
+                default:
+                    setStatus("");
+            }
         }
     };
 
@@ -35,55 +61,64 @@ function TimeClockForm() {
         <div className="p-4 border rounded shadow">
             <h2 className="text-xl font-bold mb-4">勤怠打刻</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-                {/* 従業員選択 */}
-                <label className="block">
-                    従業員:
-                    <select
-                        value={selectedEmployee}
-                        onChange={(e) => setSelectedEmployee(e.target.value)}
-                        className="border p-2 w-full"
-                    >
-                        <option value="">選択してください</option>
-                        {employees.map((employee) => (
-                            <option key={employee.id} value={employee.id}>
-                                {employee.display_name} ({employee.email})
-                            </option>
-                        ))}
-                    </select>
-                </label>
+            {/* 現在時刻の表示 */}
+            <ClockDisplay />
 
-                {/* 打刻タイプ選択 */}
-                <label className="block">
-                    打刻タイプ:
-                    <select
-                        value={clockType}
-                        onChange={(e) => setClockType(e.target.value)}
-                        className="border p-2 w-full"
-                    >
-                        <option value="clock_in">出勤</option>
-                        <option value="clock_out">退勤</option>
-                        <option value="break_begin">休憩開始</option>
-                        <option value="break_end">休憩終了</option>
-                    </select>
-                </label>
+            {/* ユーザー名の表示 */}
+            <div className="my-6 text-lg flex">
+                <p className="font-semibold text-xl mb-1">
+                    ユーザー：
+                </p>
+                <p className="text-2xl font-bold text">
+                    {user?.name || "未取得"}
+                </p>
+                <p className="text-1xl font-bold text-blue-400 flex items-center gap-4">
+                    {status && (
+                        <span className="text- font-medium text-green-600">
+                            （{status}）
+                        </span>
+                    )}
+                </p>
+            </div>
 
-                {/* 日時入力 */}
-                <label className="block">
-                    日時:
-                    <input
-                        type="datetime-local"
-                        value={datetime}
-                        onChange={(e) => setDatetime(e.target.value)}
-                        className="border p-2 w-full"
-                    />
-                </label>
-
-                {/* 送信ボタン */}
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-                    打刻する
+            {/* 打刻ボタン群 */}
+            <div className="flex justify-center space-x-6 ">
+                <button
+                    onClick={() => handleClockAction("clock_in")}
+                    className="bg-green-500 text-white px-4 py-2 rounded"
+                >
+                    出勤
                 </button>
-            </form>
+                <button
+                    onClick={() => handleClockAction("break_begin")}
+                    className="bg-gray-500 text-white px-4 py-2 rounded"
+                >
+                    休憩開始
+                </button>
+                <button
+                    onClick={() => handleClockAction("break_end")}
+                    className="bg-gray-500 text-white px-4 py-2 rounded"
+                >
+                    休憩終了
+                </button>
+                <button
+                    onClick={() => handleClockAction("clock_out")}
+                    className="bg-red-500 text-white px-4 py-2 rounded"
+                >
+                    退勤
+                </button>
+            </div>
+
+            {/* 顧客メモが機能しない */}
+            <div className="my-4">
+                <label className="block font-medium mb-1">勤怠メモ（任意）:</label>
+                <textarea
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                    className="border p-2 w-full rounded"
+                    placeholder="遅刻理由、業務内容など"
+                />
+            </div>
         </div>
     );
 }

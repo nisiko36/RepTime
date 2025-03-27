@@ -25,6 +25,8 @@ class FreeeController < ApplicationController
       employee_id = permitted_params[:employee_id].to_s.strip
       clock_type  = permitted_params[:clock_type].to_s.strip
       datetime    = permitted_params[:datetime].to_s.strip
+      note        = permitted_params[:note].to_s.strip rescue ""
+
 
       # 日時フォーマット統一
       formatted_datetime = Time.parse(datetime).strftime("%Y-%m-%d %H:%M")
@@ -32,7 +34,7 @@ class FreeeController < ApplicationController
       Rails.logger.info "送信データ: employee_id=#{employee_id}, clock_type=#{clock_type}, datetime=#{formatted_datetime}"
 
       # APIリクエスト実行
-      response = @service.post_time_clock(employee_id, clock_type, formatted_datetime)
+      response = @service.post_time_clock(employee_id, clock_type, formatted_datetime, note)
 
       # レスポンス処理
       if response.is_a?(Hash) && response[:error]

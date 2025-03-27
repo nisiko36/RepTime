@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_25_075725) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_26_195608) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_25_075725) do
     t.boolean "is_walk_in", default: false
     t.string "square_booking_id"
     t.integer "party_size"
+    t.boolean "is_repeat"
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
   end
 
@@ -88,9 +89,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_25_075725) do
     t.bigint "user_id", null: false
     t.datetime "check_in"
     t.datetime "check_out"
-    t.json "breaks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "break_begin"
+    t.datetime "break_end"
     t.index ["user_id"], name: "index_shifts_on_user_id"
   end
 

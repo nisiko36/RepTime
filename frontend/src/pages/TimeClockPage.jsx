@@ -1,20 +1,16 @@
 import TimeClockForm from "../components/TimeClockForm";
-import BookingWithMemoList from "../components/BookingWithMemoList";
-
+import AttendanceHistory from "../components/AttendanceHistory";
 
 function TimeClockPage() {
+    // 仮のログインユーザー情報（本番はContextやSessionから取得）
+
     return (
-        <div>
-            <div className="p-8">
-                <h1 className="text-2xl font-bold mb-4">勤怠管理</h1>
-                <TimeClockForm />
-            </div>
-
-            {/* <div className="p-8">
-                <h1 className="text-2xl font-bold mb-4">予約メモ</h1>
-                <BookingWithMemoList />
-            </div> */}
-
+        <div className="p-8">
+            <h1 className="text-2xl font-bold mb-6">勤怠管理</h1>
+            {/* 打刻フォーム */}
+            <TimeClockForm />
+            {/* 勤怠履歴一覧 */}
+            <AttendanceHistory />
         </div>
     );
 }

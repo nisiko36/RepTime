@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :customers, only: [:index, :show, :update]
   resources :customer_memos, only: [:index, :create, :update, :destroy]
   resources :owner_messages, only: [:index, :create, :update, :destroy]
+  resources :attendance_memos, only: [:create, :update]
+
 
   # Freee API ルート
   get "/freee/employees", to: "freee#employees"
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
 
   # LINE チェックイン
   post "/line_checkin", to: "line_checkins#create"
+  post "/test_scenarios/create_data", to: "test_scenarios#create_data"
+
 
   # Square 予約読み取りを Reservation に同期
   post "/square_sync/today", to: "square_sync#sync_today"
