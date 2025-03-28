@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { postTimeClock, saveAttendanceMemo } from "../api/freeeApi";
+import { postTimeClock } from "../api/freeeApi";
 import ClockDisplay from "./ClockDisplay";
 import useAuth from "../hooks/useAuth";
-
+import AttendanceMemoForm from "./AttendanceMemoForm"; 
 
 function TimeClockForm() {
     const { user } = useAuth();
     const [status, setStatus] = useState("");
-    const [note, setNote] = useState("");
-
 
     const handleClockAction = async (clockType) => {
         if (!user) {
@@ -16,28 +14,17 @@ function TimeClockForm() {
             return;
         }
 
-        const datetime = new Date().toLocaleString("sv-SE", { timeZone: "Asia/Tokyo" }).replace(" ", "T");
-        const response = await postTimeClock(user.freee_employee_id, clockType, datetime, note);
-        console.log(user.freee_employee_id)
+        const datetime = new Date()
+            .toLocaleString("sv-SE", { timeZone: "Asia/Tokyo" })
+            .replace(" ", "T");
+
+        const response = await postTimeClock(user.freee_employee_id, clockType, datetime);
 
         if (response?.error) {
             alert(`エラー: ${response.error}`);
         } else {
             alert("勤怠打刻が完了しました！");
 
-            // freee人事労務とは関係のない顧客メモを保存
-            if (note.trim() !== "") {
-                await saveAttendanceMemo({
-                    user_id: user.id,
-                    date: datetime,
-                    memo_type: clockType,
-                    content: note
-                });
-            }
-            // 押すとリセット
-            setNote("");
-
-            // ステータス変更
             switch (clockType) {
                 case "clock_in":
                     setStatus("出勤中");
@@ -61,28 +48,19 @@ function TimeClockForm() {
         <div className="p-4 border rounded shadow">
             <h2 className="text-xl font-bold mb-4">勤怠打刻</h2>
 
-            {/* 現在時刻の表示 */}
             <ClockDisplay />
 
-            {/* ユーザー名の表示 */}
-            <div className="my-6 text-lg flex">
-                <p className="font-semibold text-xl mb-1">
-                    ユーザー：
-                </p>
-                <p className="text-2xl font-bold text">
-                    {user?.name || "未取得"}
-                </p>
-                <p className="text-1xl font-bold text-blue-400 flex items-center gap-4">
-                    {status && (
-                        <span className="text- font-medium text-green-600">
-                            （{status}）
-                        </span>
-                    )}
-                </p>
+            <div className="my-6 text-lg flex items-center gap-2">
+                <p className="font-semibold text-xl">ユーザー：</p>
+                <p className="text-2xl font-bold">{user?.name || "未取得"}</p>
+                {status && (
+                    <span className="text-sm font-medium text-green-600">
+                        （{status}）
+                    </span>
+                )}
             </div>
 
-            {/* 打刻ボタン群 */}
-            <div className="flex justify-center space-x-6 ">
+            <div className="flex justify-center space-x-6">
                 <button
                     onClick={() => handleClockAction("clock_in")}
                     className="bg-green-500 text-white px-4 py-2 rounded"
@@ -109,16 +87,8 @@ function TimeClockForm() {
                 </button>
             </div>
 
-            {/* 顧客メモが機能しない */}
-            <div className="my-4">
-                <label className="block font-medium mb-1">勤怠メモ（任意）:</label>
-                <textarea
-                    value={note}
-                    onChange={(e) => setNote(e.target.value)}
-                    className="border p-2 w-full rounded"
-                    placeholder="遅刻理由、業務内容など"
-                />
-            </div>
+            {/* 勤怠メモフォームの追加 */}
+            {user && <AttendanceMemoForm user={user} />}
         </div>
     );
 }

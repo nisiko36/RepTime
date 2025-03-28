@@ -12,10 +12,16 @@ const useOwnerMessages = () => {
     const fetchOwnerMessages = async () => {
         try {
             const response = await apiClient.get("/owner_messages");
-            setMessages(response.data);
-            setLoading(false);
+
+            // ここで降順ソートを追加
+            const sorted = response.data.sort(
+                (a, b) => new Date(b.created_at) - new Date(a.created_at)
+            );
+
+            setMessages(sorted);
         } catch (error) {
             console.error("Error fetching owner messages:", error);
+        } finally {
             setLoading(false);
         }
     };

@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import apiClient from "../api/apiClient";
 
 function MonthView({ date, onDateSelect, onSwitchToDay }) {
-    const [monthData, setMonthData] = useState([]); // [{ day: 1, count: 10 }, ...]
+    const [monthData, setMonthData] = useState([]);
+    const [repeatRates, setRepeatRates] = useState({
+        overall: 0,
+        group1: 0,
+        group2: 0,
+        overallCount: [0, 0],
+        group1Count: [0, 0],
+        group2Count: [0, 0]
+    });
     const daysInMonth = getDaysInMonth(date);
 
     useEffect(() => {
@@ -12,35 +20,87 @@ function MonthView({ date, onDateSelect, onSwitchToDay }) {
 
     const fetchMonthReservations = async () => {
         try {
-            // 各日ごとに予約件数を取得
             const requests = daysInMonth.map((day) => {
                 const formattedDate = formatDateForApi(day);
                 return apiClient.get(`/reservations/by_date?date=${formattedDate}`);
             });
             const responses = await Promise.all(requests);
+
             const data = daysInMonth.map((day, index) => {
-                const count = Array.isArray(responses[index].data)
-                    ? responses[index].data.length
-                    : 0;
-                return { day: day.getDate(), count };
+                const reservations = responses[index].data || [];
+                const total = reservations.length;
+                const repeats = reservations.filter(r => r.is_repeat).length;
+                return {
+                    day: day.getDate(),
+                    count: total,
+                    repeats: repeats
+                };
             });
             setMonthData(data);
+
+            let allReservations = [];
+            responses.forEach((response) => {
+                if (Array.isArray(response.data)) {
+                    allReservations.push(...response.data);
+                }
+            });
+
+            const totalReservations = allReservations.length;
+            const totalRepeats = allReservations.filter(r => r.is_repeat).length;
+            const overallRate = totalReservations > 0 ? (totalRepeats / totalReservations) * 100 : 0;
+
+            const group1Reservations = allReservations.filter(r => {
+                if (!r.start_at) return false;
+                const d = new Date(r.start_at);
+                const weekday = d.getDay();
+                return weekday === 2 || weekday === 3 || weekday === 4; // 火水木
+            });
+            const group1Total = group1Reservations.length;
+            const group1Repeats = group1Reservations.filter(r => r.is_repeat).length;
+            const group1Rate = group1Total > 0 ? (group1Repeats / group1Total) * 100 : 0;
+
+            const group2Reservations = allReservations.filter(r => {
+                if (!r.start_at) return false;
+                const d = new Date(r.start_at);
+                const weekday = d.getDay();
+                return weekday === 5 || weekday === 6 || weekday === 0; // 金土日
+            });
+            const group2Total = group2Reservations.length;
+            const group2Repeats = group2Reservations.filter(r => r.is_repeat).length;
+            const group2Rate = group2Total > 0 ? (group2Repeats / group2Total) * 100 : 0;
+
+            setRepeatRates({
+                overall: overallRate,
+                group1: group1Rate,
+                group2: group2Rate,
+                overallCount: [totalRepeats, totalReservations],
+                group1Count: [group1Repeats, group1Total],
+                group2Count: [group2Repeats, group2Total]
+            });
         } catch (error) {
             console.error("Error fetching month reservations:", error);
         }
     };
 
-    // ここでカレンダーの空セルも考慮してセルを作成
     const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
-    const startOffset = firstDayOfMonth.getDay(); // 0:日曜, 1:月曜,...
+    const startOffset = firstDayOfMonth.getDay();
     const totalCells = startOffset + daysInMonth.length;
-
-    // ヘッダー：曜日表示
     const weekDays = ["日", "月", "火", "水", "木", "金", "土"];
 
     return (
         <div className="month-view max-w-4xl mx-auto p-4">
-            {/* 曜日ヘッダー */}
+            <div className="mb-4 space-y-2">
+                <div className="p-2 text-center" style={{ backgroundColor: getColorForRepeatRate(repeatRates.overall) }}>
+                    全体のリピート率: {repeatRates.overallCount[0]} / {repeatRates.overallCount[1]}（{repeatRates.overall.toFixed(1)}%）
+                </div>
+                <div className="p-2 text-center" style={{ backgroundColor: getColorForRepeatRate(repeatRates.group1) }}>
+                    火水木のリピート率: {repeatRates.group1Count[0]} / {repeatRates.group1Count[1]}（{repeatRates.group1.toFixed(1)}%）
+                </div>
+                <div className="p-2 text-center" style={{ backgroundColor: getColorForRepeatRate(repeatRates.group2) }}>
+                    金土日のリピート率: {repeatRates.group2Count[0]} / {repeatRates.group2Count[1]}（{repeatRates.group2.toFixed(1)}%）
+                </div>
+            </div>
+
             <div className="grid grid-cols-7 gap-1 mb-2 text-center font-bold">
                 {weekDays.map((wd, idx) => (
                     <div key={idx} className="p-2 border">
@@ -48,19 +108,20 @@ function MonthView({ date, onDateSelect, onSwitchToDay }) {
                     </div>
                 ))}
             </div>
-            {/* カレンダー本体 */}
+
             <div className="grid grid-cols-7 gap-1">
                 {Array.from({ length: totalCells }).map((_, index) => {
                     if (index < startOffset) {
-                        // 前月の空白セル
                         return <div key={index} className="p-4 border bg-gray-100" />;
                     }
                     const day = daysInMonth[index - startOffset];
                     const dayOfMonth = day.getDate();
                     const cellData = monthData.find((md) => md.day === dayOfMonth);
                     const count = cellData ? cellData.count : 0;
+                    const repeats = cellData ? cellData.repeats : 0;
+                    const rate = count > 0 ? (repeats / count) * 100 : 0;
                     const weekday = day.getDay();
-                    // 月曜日は定休日
+
                     if (weekday === 1) {
                         return (
                             <div
@@ -69,12 +130,12 @@ function MonthView({ date, onDateSelect, onSwitchToDay }) {
                                 style={{ backgroundColor: "#d3d3d3", color: "#666" }}
                             >
                                 {dayOfMonth}
-                                {/* <div className="text-xs">定休日</div> */}
                             </div>
                         );
                     }
-                    // 通常日は、予約件数に応じた3段階の色を設定
+
                     const bgColor = getColorForCount(count);
+
                     return (
                         <div
                             key={index}
@@ -86,7 +147,9 @@ function MonthView({ date, onDateSelect, onSwitchToDay }) {
                             }}
                         >
                             {dayOfMonth}
-                            <div className="text-sm">{count}件</div>
+                            <div className="text-sm">
+                                {repeats} / {count}（{rate.toFixed(0)}%）
+                            </div>
                         </div>
                     );
                 })}
@@ -95,7 +158,6 @@ function MonthView({ date, onDateSelect, onSwitchToDay }) {
     );
 }
 
-// 指定月の日付オブジェクト配列を生成
 function getDaysInMonth(baseDate) {
     const year = baseDate.getFullYear();
     const month = baseDate.getMonth();
@@ -108,7 +170,6 @@ function getDaysInMonth(baseDate) {
     return days;
 }
 
-// API送信用の日付フォーマット "YYYY-MM-DD"
 function formatDateForApi(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -116,15 +177,17 @@ function formatDateForApi(date) {
     return `${year}-${month}-${day}`;
 }
 
-/**
- * 予約件数に応じた背景色の決定
- * 0件 → 白, 1～4件 → 緑, 5～9件 → オレンジ, 10件以上 → 赤
- */
 function getColorForCount(count) {
     if (count === 0) return "#ffffff";
-    if (count <= 4) return "#48bb78"; // 緑
-    if (count <= 9) return "#ed8936"; // オレンジ
-    return "#e53e3e"; // 赤
+    if (count <= 4) return "#48bb78";
+    if (count <= 9) return "#ed8936";
+    return "#e53e3e";
+}
+
+function getColorForRepeatRate(rate) {
+    if (rate < 50) return "#ed8936";
+    if (rate <= 70) return "#48bb78";
+    return "#e53e3e";
 }
 
 export default MonthView;

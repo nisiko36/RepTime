@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:index, :show, :update]
   resources :customer_memos, only: [:index, :create, :update, :destroy]
   resources :owner_messages, only: [:index, :create, :update, :destroy]
-  resources :attendance_memos, only: [:create, :update]
+  resources :attendance_memos, only: [:index, :create, :update, :destroy]
 
 
   # Freee API ルート

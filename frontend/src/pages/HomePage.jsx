@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import OwnerMessageToday from "../components/OwnerMessageToday";
 import SeatTimelineToday from "../components/SeatTimelineToday";
 import TimeClockForm from "../components/TimeClockForm";
-import ReservationCustomerMemos from "../components/ReservationCustomerMemos";
 import ReservationCustomerMemosToday from "../components/ReservationCustomerMemosToday";
 
-
 function HomePage() {
+
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-6">Home</h1>
@@ -30,7 +29,6 @@ function HomePage() {
                     <h2 className="text-lg font-semibold mb-2">勤怠打刻</h2>
                     <TimeClockForm />
                 </section>
-
                 {/* 顧客メモ表示 */}
                 <section className="mt-6">
                     <h2 className="text-lg font-semibold mb-2">本日の顧客メモ</h2>

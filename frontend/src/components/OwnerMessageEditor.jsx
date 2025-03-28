@@ -1,24 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useOwnerMessages from "../hooks/useOwnerMessages";
 import useAuth from "../hooks/useAuth";
+import useShifts from "../hooks/useShifts";
+import { formatShiftsForMessage } from "../utils/shiftFormatter";
+
 
 const OwnerMessageEditor = () => {
     const { messages, loading, createOwnerMessage, updateOwnerMessage, deleteOwnerMessage } = useOwnerMessages();
-    const { user } = useAuth(); // 🔹 ログインユーザー情報を取得
-
+    const { user } = useAuth();
     // インライン編集
     const [editingMessageId, setEditingMessageId] = useState(null);
     const [editingText, setEditingText] = useState("");
 
+    // シフトを取得
+    const { shifts } = useShifts(); // 全シフト取得
+    const [shiftText, setShiftText] = useState("");
 
     const today = new Date().toISOString().split("T")[0]; // "YYYY-MM-DD"
 
-    // 🔸 初期値で user.id を使用
+    // 初期値で user.id を使用
     const [newMessage, setNewMessage] = useState({
-        user_id: user?.id || "",       // ログインユーザーのID
+        user_id: user?.id || "",
         messages: "",
-        posted_on: today,              // 当日を初期値
+        posted_on: today,// 当日を初期値
     });
+    // posted_on（日付）に変化があったら、その日付のシフトだけ抽出して整形
+    useEffect(() => {
+        const formatDate = (d) => new Date(d).toISOString().split("T")[0];
+        const targetDate = newMessage.posted_on;
+
+        const filtered = shifts.filter((s) => {
+            const inDate = s.check_in ? formatDate(s.check_in) : null;
+            const outDate = s.check_out ? formatDate(s.check_out) : null;
+            return inDate === targetDate || outDate === targetDate;
+        });
+
+        setShiftText(formatShiftsForMessage(filtered));
+    }, [shifts, newMessage.posted_on]);
+
 
     const handleCreate = () => {
         if (!user) return;
@@ -30,11 +49,13 @@ const OwnerMessageEditor = () => {
         });
     };
 
+
+
     if (loading) return <p>Loading...</p>;
 
     return (
         <div>
-                        {user?.role === "owner" && (
+            {user?.role === "owner" && (
                 <>
                     <h2 className="text-lg font-bold mt-6">新規メッセージ</h2>
                     <div className="mt-2 flex flex-wrap gap-2">
@@ -54,6 +75,18 @@ const OwnerMessageEditor = () => {
                             }
                             className="border p-2"
                         />
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setNewMessage((prev) => ({
+                                    ...prev,
+                                    messages: prev.messages + "\n" + shiftText,
+                                }))
+                            }
+                            className="bg-green-500 px-3 py-1 mr-2"
+                        >
+                            シフトを本文に挿入
+                        </button>
                         <button
                             className="bg-blue-500 text-white px-4 py-2"
                             onClick={handleCreate}

@@ -15,11 +15,17 @@ const useReservations = (date = null) => {
         }
     }, [date]);
 
+    // 全予約を取得してソート
     const fetchAllReservations = async () => {
         try {
             setLoading(true);
             const response = await apiClient.get("/reservations");
-            setReservations(response.data);
+            const data = response.data;
+
+            // ★開始時刻で昇順に並び替え
+            data.sort((a, b) => new Date(a.start_at) - new Date(b.start_at));
+
+            setReservations(data);
         } catch (err) {
             console.error("Error fetching all reservations:", err);
         } finally {
@@ -27,11 +33,17 @@ const useReservations = (date = null) => {
         }
     };
 
+    // 日付指定で取得してソート
     const fetchReservationsByDate = async (dateParam) => {
         try {
             setLoading(true);
             const response = await apiClient.get(`/reservations/by_date?date=${dateParam}`);
-            setReservations(response.data);
+            const data = response.data;
+
+            // ★開始時刻で昇順に並び替え
+            data.sort((a, b) => new Date(a.start_at) - new Date(b.start_at));
+
+            setReservations(data);
         } catch (err) {
             console.error("Error fetching reservations by date:", err);
         } finally {
@@ -39,15 +51,15 @@ const useReservations = (date = null) => {
         }
     };
 
-    // ここからは create, update, delete は同じ
+    // create, update, delete は同じ
     const createReservation = async (reservationData) => {
         try {
             await apiClient.post("/reservations", { reservation: reservationData });
-        if (date) {
-            fetchReservationsByDate(date);
-        } else {
-            fetchAllReservations();
-        }
+            if (date) {
+                fetchReservationsByDate(date);
+            } else {
+                fetchAllReservations();
+            }
         } catch (error) {
             console.error("Error creating reservation:", error);
         }
@@ -57,10 +69,10 @@ const useReservations = (date = null) => {
         try {
             await apiClient.put(`/reservations/${id}`, { reservation: reservationData });
             if (date) {
-            fetchReservationsByDate(date);
-        } else {
-            fetchAllReservations();
-        }
+                fetchReservationsByDate(date);
+            } else {
+                fetchAllReservations();
+            }
         } catch (error) {
             console.error("Error updating reservation:", error);
         }
@@ -70,10 +82,10 @@ const useReservations = (date = null) => {
         try {
             await apiClient.delete(`/reservations/${id}`);
             if (date) {
-            fetchReservationsByDate(date);
-        } else {
-            fetchAllReservations();
-        }
+                fetchReservationsByDate(date);
+            } else {
+                fetchAllReservations();
+            }
         } catch (error) {
             console.error("Error deleting reservation:", error);
         }
