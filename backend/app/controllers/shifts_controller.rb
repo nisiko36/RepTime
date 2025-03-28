@@ -39,6 +39,6 @@ class ShiftsController < ApplicationController
   end
 
   def shift_params
-    params.require(:shift).permit(:user_id, :check_in, :check_out, breaks: {})
+    params.require(:shift).permit(:user_id, :check_in, :check_out, :break_begin, :break_end)
   end
 end

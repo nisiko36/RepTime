@@ -1,16 +1,18 @@
 import React from "react";
 import useReservations from "../hooks/useReservations";
-import SeatTimeline from "./SeatTimeline"; // components/ 直下にある想定
+import SeatTimeline from "./SeatTimeline"; 
 
 const SEATS_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2"];
 
 const getTodayDateString = () => {
-    // 仮データ
-    const today =new Date("2025-02-01")
-    
-    // const today = new Date();
-    return today.toISOString().split("T")[0]; // "YYYY-MM-DD"
+    const today = new Date();
+    return today.toLocaleDateString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    }).replace(/\//g, "-"); // "YYYY-MM-DD"
 };
+
 
 const SeatTimelineToday = () => {
     const today = getTodayDateString();

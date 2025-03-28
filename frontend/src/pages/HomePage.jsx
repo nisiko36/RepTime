@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import OwnerMessageToday from "../components/OwnerMessageToday";
 import SeatTimelineToday from "../components/SeatTimelineToday";
 import TimeClockForm from "../components/TimeClockForm";
+import ReservationCustomerMemos from "../components/ReservationCustomerMemos";
+import ReservationCustomerMemosToday from "../components/ReservationCustomerMemosToday";
 
 
 function HomePage() {
@@ -22,10 +24,21 @@ function HomePage() {
                 </section>
             </div>
 
-            <section className="w-1/2">
-                    <h2 className="text-lg font-semibold mb-2"></h2>
+            <div className="flex gap-6">
+                {/* 勤怠フォーム */}
+                <section className="w-1/2 mt-6">
+                    <h2 className="text-lg font-semibold mb-2">勤怠打刻</h2>
                     <TimeClockForm />
-            </section>
+                </section>
+
+                {/* 顧客メモ表示 */}
+                <section className="mt-6">
+                    <h2 className="text-lg font-semibold mb-2">本日の顧客メモ</h2>
+                    {/* <ReservationCustomerMemos date={today} /> */}
+                    <ReservationCustomerMemosToday />
+
+                </section>
+            </div>
         </div>
     );
 }

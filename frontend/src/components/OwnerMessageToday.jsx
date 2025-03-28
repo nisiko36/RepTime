@@ -6,7 +6,11 @@ const OwnerMessageToday = () => {
     if (loading) return <p>Loading...</p>;
 
     // 今日の日付を "YYYY-MM-DD" 形式に整形
-    const todayStr = new Date().toISOString().split("T")[0];
+    const todayStr = new Date().toLocaleDateString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    }).replace(/\//g, "-");
 
     // 今日の日付と一致するメッセージのみ抽出
     const todayMessages = messages.filter(

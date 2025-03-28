@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import SeatTimelineModal from "../components/SeatTimelineModal";
 
 const START_HOUR = 18;
 const END_HOUR = 23;
 const TOTAL_HOURS = END_HOUR - START_HOUR; // 5時間
 
-function SeatTimeline({ seatName, reservations }) {
+function SeatTimeline({ seatName, reservations, date, updateReservation }) {
+    const [selectedReservation, setSelectedReservation] = useState(null);
+
+    const handleCloseModal = () => {
+        setSelectedReservation(null);
+    };
+
     return (
         <div className="relative mb-1" style={{ height: "30px" }}>
             {/* 左側に席番号を表示 */}
@@ -13,7 +20,6 @@ function SeatTimeline({ seatName, reservations }) {
             </div>
             {/* タイムラインエリア */}
             <div className="relative ml-16 h-full bg-gray-200">
-                {/* すべての行で30分ごとの点線目盛りを表示、ただし時間ラベルは A1 のみ表示 */}
                 {getTimeTicks(START_HOUR, END_HOUR, 0.5).map((tick, idx) => {
                     const leftPercent = calcPercent(tick, START_HOUR, TOTAL_HOURS);
                     return (
@@ -43,30 +49,49 @@ function SeatTimeline({ seatName, reservations }) {
                     const startPercent = calcTimePercent(res.start_at);
                     const endPercent = calcTimePercent(res.end_at);
                     const widthPercent = endPercent - startPercent;
-                    // 帯の色: 1回目なら緑 (#48bb78)、2回目以上なら青 (#4299e1)
-                    // const color =
-                    //     res.customer && res.customer.visit_count > 1 ? "#4299e1" : "#48bb78";
-                    {console.log("is_repeat")}
-                    {console.log(res.is_repeat)}
                     const color = res.is_repeat ? "#4299e1" : "#48bb78";
 
                     return (
                         <div
                             key={idx}
-                            className="absolute flex items-center justify-center text-white text-xs rounded"
+                            className="absolute flex items-center justify-left cursor-pointer text-white text-xs rounded"
                             style={{
                                 left: `${startPercent}%`,
                                 width: `${widthPercent}%`,
                                 height: "100%",
                                 backgroundColor: color,
-                                border: '1px solid black',
+                                border: "1px solid black"
                             }}
+                            onClick={() => setSelectedReservation(res)}
                         >
-                            {res.customer_id}
+                            {/* 飛び込みならマーク表示 */}
+                            {!res.is_walk_in && (
+                                <span className="text-[10px] text-black bg-yellow-300 rounded px-1 mt-0.5">
+                                    予約
+                                </span>
+                            )}
+
+                            <span>{res.customer?.name || res.customer?.line_display_name}</span>
+
+
+
                         </div>
                     );
                 })}
             </div>
+
+            {/* モーダル表示 */}
+            {selectedReservation && (
+                <SeatTimelineModal
+                    reservation={selectedReservation}
+                    date={date}
+                    onClose={handleCloseModal}
+                    onUpdateReservation={(id, updatedData) => {
+                        updateReservation(id, updatedData);
+                        handleCloseModal();
+                    }}
+                />
+            )}
         </div>
     );
 }

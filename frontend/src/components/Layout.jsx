@@ -26,7 +26,7 @@ const Layout = () => {
                         <Link to="/users" className="hover:underline">従業員</Link>
                         <Link to="/time-clock" className="hover:underline">勤怠打刻</Link>
                         <Link to="/owner-messages" className="hover:underline">オーナー伝言板</Link>
-                        <Link to="/shifts" className="hover:underline">シフト希望</Link>
+                        <Link to="/shifts" className="hover:underline">シフト</Link>
                         <Link to="/login" className="hover:underline text-red-400">ログアウト</Link>
                     </nav>
                 </aside>
